@@ -217,7 +217,6 @@ if (
 
             st.header(f":green[Your prediction is negative for a stroke!]")
 
-        st.write(df)
 
         st.header('', divider='grey')
 
