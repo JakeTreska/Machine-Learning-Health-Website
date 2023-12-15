@@ -12,7 +12,7 @@ from sklearn.preprocessing import OneHotEncoder
 all_data = pd.read_csv("healthcare-dataset-stroke-data.csv")
 
 
-with open("/Users/jaketreska/PycharmProjects/my_app/voting_model_ML",'rb') as file:
+with open("voting_model_ML",'rb') as file:
     model = pickle.load(file)
 
 
