@@ -12,7 +12,7 @@ from sklearn.preprocessing import OneHotEncoder
 all_data = pd.read_csv("healthcare-dataset-stroke-data.csv")
 
 
-with open("voting_model_ML",'rb') as file:
+with open("/Users/jaketreska/PycharmProjects/my_app/voting_model_ML",'rb') as file:
     model = pickle.load(file)
 
 
@@ -168,8 +168,8 @@ st.write(f"Work Type Status: {work_type}")
 
 
 # THIS IS FOR SMOKE
-st.title("Smoker")
-smoker = st.selectbox("Smoker?", ["--Unselected--", "Unknown", "Never", "Formally smoked", "Smokes"])
+st.title("Smoking")
+smoker = st.selectbox("smoking status?", ["--Unselected--", "Unknown", "Never", "Formally smoked", "Smokes"])
 
 st.write(f"Smoking status: {smoker}")
 
@@ -221,9 +221,13 @@ if (
         st.header('', divider='grey')
 
         fig1 = plt.figure(figsize=(16, 4))
+        # sns.pointplot(data=df, x="age", y=temp_bmi, color='green')
         sns.lineplot(data=all_data, x="age", y="bmi", hue="stroke")
+        plt.scatter(df.age,bmi, color = "green", s = 50)
         fig2 = plt.figure(figsize=(16, 4))
+        #sns.pointplot(data=df, x="age", y=temp_glucose, color='green')
         sns.lineplot(data=all_data, x="age", y="avg_glucose_level", hue="stroke")
+        plt.scatter(df.age, temp_glucose, color="green", s = 50)
         fig3 = plt.figure(figsize=(16, 4))
         sns.barplot(x=all_data.stroke, y=all_data.hypertension)
 
