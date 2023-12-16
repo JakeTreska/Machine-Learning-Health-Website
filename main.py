@@ -221,10 +221,8 @@ if (
         st.header('', divider='grey')
 
         fig1 = plt.figure(figsize=(16, 4))
-        sns.pointplot(data = df,x="age", y=temp_bmi, color = 'green')
         sns.lineplot(data=all_data, x="age", y="bmi", hue="stroke")
         fig2 = plt.figure(figsize=(16, 4))
-        sns.pointplot(data=df, x="age", y=temp_glucose, color='green')
         sns.lineplot(data=all_data, x="age", y="avg_glucose_level", hue="stroke")
         fig3 = plt.figure(figsize=(16, 4))
         sns.barplot(x=all_data.stroke, y=all_data.hypertension)
